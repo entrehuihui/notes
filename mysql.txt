@@ -1,0 +1,34 @@
+change master to master_host='47.106.116.46',master_user='bfmarket',master_password='123456', master_log_file='mysql-bin.000004',master_log_pos=120;
+
+
+
+
+ rm -fr /var/lib/mysql/*  重置账户选项
+ rm -fr /var/lib/mysql/*  重置账户选项
+
+ alter table tablename auto_increment=100; 自增变量自增起始值
+
+ 打印日志：
+ 打印到：${appInfo.name}-web.log
+ this.app.logger.debug('debug info');
+ this.app.logger.info('some request data: %j', ctx.request.body);
+ this.app.logger.warn('WARNNING!!!!');   
+
+ 打印到：egg-web.log
+ app.coreLogger.info
+
+ 
+ ctx.logger.debug('debug info');
+ ctx.logger.info('some request data: %j', ctx.request.body);
+ ctx.logger.warn('WARNNING!!!!');
+ ctx.logger.error(new Error('whoops'));
+ ctx.coreLogger.info('info');
+
+
+egg项目环境变量
+export MOCK_HOME_DIR=/data/node/
+
+firewall防火墙
+添加端口：firewall-cmd --permanent --add-port=1235/tcp
+查看配置：firewall-cmd --list-all
+查询状态：systemctl status firewalld.service
