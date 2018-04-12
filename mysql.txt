@@ -40,3 +40,7 @@ git上传
 ）
 4.输入“git remote add origin https://github.com/shench5612390/Test.git”（git remote add origin 你自己的https地址），连接你的guthub仓库。
 5.输入“git push -u origin master”，上传项目到Github。这里会要求输入Github的账号密码，按要求输入就可以。
+
+解压/压缩
+gzip -d xxx  解压gz
+tar -zxf xxx 解压tar.gz
