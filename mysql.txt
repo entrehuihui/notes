@@ -1,6 +1,20 @@
 change master to master_host='47.106.116.46',master_user='bfmarket',master_password='123456', master_log_file='mysql-bin.000004',master_log_pos=120;
 
+stop slave;
+reset slave;
+stop slave;
 
+[mysqld]
+server-id = 1　　　　　　　　//唯一id
+log-bin=mysql-bin              //其中这两行是本来就有的，可以不用动，添加下面两行即可.指定日志文件
+binlog-do-db = test　　　　 //记录日志的数据库
+binlog-ignore-db = mysql    //不记录日志的数据库
+
+[mysqld]
+server-id = 2
+log-bin=mysql-bin
+replicate-do-db = test
+replicate-ignore-db = mysql,information_schema,performance_schema
 
 
  rm -fr /var/lib/mysql/*  重置账户选项
