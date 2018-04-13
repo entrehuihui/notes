@@ -16,7 +16,6 @@ log-bin=mysql-bin
 replicate-do-db = test
 replicate-ignore-db = mysql,information_schema,performance_schema
 
-
  rm -fr /var/lib/mysql/*  重置账户选项
  rm -fr /var/lib/mysql/*  重置账户选项
 
