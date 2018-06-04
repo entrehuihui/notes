@@ -59,3 +59,5 @@ git上传
 解压/压缩
 gzip -d xxx  解压gz
 tar -zxf xxx 解压tar.gz
+
+DATEDIFF() 计算两个时间的天数差
