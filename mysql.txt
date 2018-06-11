@@ -61,3 +61,26 @@ gzip -d xxx  解压gz
 tar -zxf xxx 解压tar.gz
 
 DATEDIFF() 计算两个时间的天数差
+
+有时候我们辛辛苦苦安装了一个服务却发现无法访问，以为自己没有安装成功，其实解决的方法很简单，就是开启一下相关端口。比如说我安装了Nginx或Apache，那么就需要在防火墙上放行80端口。相关实例代码如下。 
+
+/sbin/iptables -I INPUT -p tcp --dport 80 -j ACCEPT #开启80端口 
+/sbin/iptables -I INPUT -p tcp --dport 22 -j ACCEPT #开启22端口 
+/etc/rc.d/init.d/iptables save #保存配置 
+/etc/rc.d/init.d/iptables restart #重启服务 
+查看已开放端口 
+/etc/init.d/iptables status 
+结果如下 
+Table: filter 
+Chain INPUT (policy ACCEPT) 
+num target prot opt source destination 
+2 ACCEPT tcp -- 0.0.0.0/0 0.0.0.0/0 tcp dpt:22 
+3 ACCEPT tcp -- 0.0.0.0/0 0.0.0.0/0 tcp dpt:80 
+ 
+ 
+你可以使用 lsof 命令来查看某一端口是否开放。查看端口可以这样来使用，我就以80端口为例： 
+lsof -i:80 
+如果有显示说明已经开放了，如果没有显示说明没有开放
+
+UNION / UNION ALL 合并多个查询结果
+UNION 操作符选取不同的值。如果允许重复的值，请使用 UNION ALL。
