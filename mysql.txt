@@ -84,3 +84,7 @@ lsof -i:80
 
 UNION / UNION ALL 合并多个查询结果
 UNION 操作符选取不同的值。如果允许重复的值，请使用 UNION ALL。
+
+mysql 备份 压缩：
+#!/bin/bash
+mysqldump -uusername -ppassword DatabaseName | gzip > /home/backup/DatabaseName_$(date +%Y%m%d_%H%M%S).sql.gz
