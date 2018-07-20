@@ -88,3 +88,8 @@ UNION 操作符选取不同的值。如果允许重复的值，请使用 UNION A
 mysql 备份 压缩：
 #!/bin/bash
 mysqldump -uusername -ppassword DatabaseName | gzip > /home/backup/DatabaseName_$(date +%Y%m%d_%H%M%S).sql.gz
+
+select oc_account, oc_plat, oc_sporder_id, oc_create_time, concat("'",oc_card_no), oc_card_type, oc_cost_cash from order_card where oc_state = 99
+
+
+alter table order_goods AUTO_INCREMENT=10000;  设置自增ID
